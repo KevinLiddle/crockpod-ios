@@ -1,64 +1,194 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A278a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="703-4V-yAM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="703-4V-yAM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
         <scene sceneID="clB-vc-fyl">
             <objects>
-                <viewController id="703-4V-yAM" customClass="RootViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="703-4V-yAM" customClass="RootViewController" customModule="CrockPod" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="502-Ir-ELC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crock-pod" translatesAutoresizingMaskIntoConstraints="NO" id="UVK-Tp-cbA">
+                                <rect key="frame" x="30" y="244.5" width="315" height="138"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1176470588" green="0.36862745099999999" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iAZ-4m-2z3" firstAttribute="centerY" secondItem="UVK-Tp-cbA" secondAttribute="centerY" constant="30" id="Up1-SP-Scr"/>
+                            <constraint firstItem="iAZ-4m-2z3" firstAttribute="trailing" secondItem="UVK-Tp-cbA" secondAttribute="trailing" constant="30" id="htq-eJ-vWq"/>
+                            <constraint firstItem="UVK-Tp-cbA" firstAttribute="leading" secondItem="iAZ-4m-2z3" secondAttribute="leading" constant="30" id="sn1-wk-rx7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iAZ-4m-2z3"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3h-pU-vEd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101" y="-243"/>
+            <point key="canvasLocation" x="-101.59999999999999" y="-243.32833583208398"/>
         </scene>
-        <!--Data View Controller-->
+        <!--Alarm List View Controller-->
         <scene sceneID="snT-py-3hH">
             <objects>
-                <viewController storyboardIdentifier="DataViewController" id="S4R-Ja-viH" customClass="DataViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlarmListViewController" id="S4R-Ja-viH" customClass="AlarmListViewController" customModule="CrockPod" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZwX-cT-FIQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cF2-Le-7mQ">
-                                <rect key="frame" x="20" y="20" width="335" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1b-V9-EN7">
-                                <rect key="frame" x="20" y="45" width="335" height="608"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1b-V9-EN7" userLabel="contentview">
+                                <rect key="frame" x="20" y="83" width="335" height="570"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AXM-Xj-P80" userLabel="Alarm Table View">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="570"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="sectionIndexBackgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="85" id="W06-Ut-aMl" userLabel="Alarm List Item Cell" customClass="AlarmTableViewCell" customModule="CrockPod" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="335" height="85"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W06-Ut-aMl" id="ZY1-Q5-CLu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="85"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="wgk-ER-Ri2">
+                                                            <rect key="frame" x="20" y="20" width="295" height="45"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3CR-Rx-Yy3" userLabel="alarmtimecontainer">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="45"/>
+                                                                    <subviews>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:55PM" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cw8-Bs-wLV">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="17"/>
+                                                                            <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="20"/>
+                                                                            <color key="textColor" red="1" green="0.98039215690000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun, Mon, Tue, Wed, Thu, Fri" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cil-Mu-Q7H">
+                                                                            <rect key="frame" x="0.0" y="17" width="80" height="28"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="28" id="Zvk-as-TIT"/>
+                                                                            </constraints>
+                                                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="11"/>
+                                                                            <color key="textColor" red="1" green="0.98039215690000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="cw8-Bs-wLV" firstAttribute="top" secondItem="3CR-Rx-Yy3" secondAttribute="top" id="EOO-Lt-ePb"/>
+                                                                        <constraint firstAttribute="width" constant="80" id="F8Q-xm-u6q"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="Cil-Mu-Q7H" secondAttribute="bottom" id="Gsi-kF-92O"/>
+                                                                        <constraint firstItem="Cil-Mu-Q7H" firstAttribute="top" secondItem="cw8-Bs-wLV" secondAttribute="bottom" id="W19-QT-am4"/>
+                                                                    </constraints>
+                                                                </stackView>
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NPR Hourly News Every Day and Stuff and other things" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OlS-eT-sVn">
+                                                                    <rect key="frame" x="88" y="0.0" width="150" height="45"/>
+                                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                                                    <color key="textColor" red="1" green="0.98039215690000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBh-UG-Dam" userLabel="enabledswitchcontainer">
+                                                                    <rect key="frame" x="246" y="0.0" width="49" height="45"/>
+                                                                    <subviews>
+                                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSk-kK-Lib">
+                                                                            <rect key="frame" x="0.0" y="7" width="51" height="31"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="width" constant="49" id="0nC-u7-Voq"/>
+                                                                                <constraint firstAttribute="height" constant="31" id="Ery-mJ-ELC"/>
+                                                                            </constraints>
+                                                                        </switch>
+                                                                    </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="qSk-kK-Lib" firstAttribute="leading" secondItem="zBh-UG-Dam" secondAttribute="leading" id="01e-ro-Jae"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="qSk-kK-Lib" secondAttribute="trailing" id="8Oj-pe-0Fc"/>
+                                                                        <constraint firstItem="qSk-kK-Lib" firstAttribute="centerY" secondItem="zBh-UG-Dam" secondAttribute="centerY" id="KTd-40-17g"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="45" id="6ku-av-ZY4"/>
+                                                                <constraint firstAttribute="trailing" secondItem="zBh-UG-Dam" secondAttribute="trailing" id="HLa-an-jqT"/>
+                                                                <constraint firstItem="zBh-UG-Dam" firstAttribute="leading" secondItem="OlS-eT-sVn" secondAttribute="trailing" constant="8" symbolic="YES" id="RwE-Z6-gch"/>
+                                                                <constraint firstItem="3CR-Rx-Yy3" firstAttribute="leading" secondItem="wgk-ER-Ri2" secondAttribute="leading" id="hJ0-Uo-0lx"/>
+                                                                <constraint firstItem="OlS-eT-sVn" firstAttribute="leading" secondItem="3CR-Rx-Yy3" secondAttribute="trailing" constant="8" symbolic="YES" id="hSO-ld-pF0"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.12941176470588237" green="0.36470588235294116" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="wgk-ER-Ri2" secondAttribute="trailing" constant="20" symbolic="YES" id="0fe-aO-MWm"/>
+                                                        <constraint firstItem="wgk-ER-Ri2" firstAttribute="leading" secondItem="ZY1-Q5-CLu" secondAttribute="leading" constant="20" symbolic="YES" id="6ZW-qk-tNe"/>
+                                                        <constraint firstItem="wgk-ER-Ri2" firstAttribute="top" secondItem="ZY1-Q5-CLu" secondAttribute="top" constant="20" symbolic="YES" id="Udl-0s-5TY"/>
+                                                        <constraint firstAttribute="bottom" secondItem="wgk-ER-Ri2" secondAttribute="bottom" constant="20" symbolic="YES" id="f5x-CR-BVk"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="alarmTime" destination="cw8-Bs-wLV" id="epw-ED-H2f"/>
+                                                    <outlet property="enabledSwitch" destination="qSk-kK-Lib" id="kp7-js-cgF"/>
+                                                    <outlet property="podcastTitle" destination="OlS-eT-sVn" id="2zp-fR-vpj"/>
+                                                    <outlet property="repeatDays" destination="Cil-Mu-Q7H" id="PyF-kR-RNM"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="S4R-Ja-viH" id="DK2-vI-HEP"/>
+                                            <outlet property="delegate" destination="S4R-Ja-viH" id="gSk-yS-Weo"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="AXM-Xj-P80" firstAttribute="centerY" secondItem="s1b-V9-EN7" secondAttribute="centerY" id="RZr-d1-stc"/>
+                                    <constraint firstItem="AXM-Xj-P80" firstAttribute="width" secondItem="s1b-V9-EN7" secondAttribute="width" id="SIp-mh-Kv2"/>
+                                    <constraint firstItem="AXM-Xj-P80" firstAttribute="height" secondItem="s1b-V9-EN7" secondAttribute="height" id="aLX-JS-Dlf"/>
+                                    <constraint firstItem="AXM-Xj-P80" firstAttribute="centerX" secondItem="s1b-V9-EN7" secondAttribute="centerX" id="cqg-u8-s9N"/>
+                                </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZwV-nu-Qy9" userLabel="headercontainer">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.36862745099999999" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crock-pod" translatesAutoresizingMaskIntoConstraints="NO" id="qTD-hX-yGe">
+                                <rect key="frame" x="20" y="25" width="335" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="0Lm-f1-hnX"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.97826086960000003" green="0.91848131079999995" blue="0.73914263440000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="s1b-V9-EN7" secondAttribute="trailing" constant="20" symbolic="YES" id="333-Jl-G0r"/>
+                            <constraint firstItem="ZwV-nu-Qy9" firstAttribute="bottom" secondItem="qTD-hX-yGe" secondAttribute="bottom" constant="15" id="5Zq-io-PPd"/>
                             <constraint firstItem="s1b-V9-EN7" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leading" constant="20" symbolic="YES" id="CIC-qa-9gW"/>
-                            <constraint firstItem="cF2-Le-7mQ" firstAttribute="top" secondItem="K9I-jD-KjA" secondAttribute="top" symbolic="YES" id="NrC-c8-v1I"/>
-                            <constraint firstItem="cF2-Le-7mQ" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leading" constant="20" symbolic="YES" id="PnF-O8-Bso"/>
-                            <constraint firstAttribute="trailing" secondItem="cF2-Le-7mQ" secondAttribute="trailing" constant="20" symbolic="YES" id="cCk-mG-gz5"/>
-                            <constraint firstItem="s1b-V9-EN7" firstAttribute="top" secondItem="cF2-Le-7mQ" secondAttribute="bottom" constant="8" symbolic="YES" id="kQJ-gh-hu4"/>
+                            <constraint firstAttribute="trailing" secondItem="ZwV-nu-Qy9" secondAttribute="trailing" id="FJ8-Bc-7K0"/>
+                            <constraint firstItem="qTD-hX-yGe" firstAttribute="top" secondItem="K9I-jD-KjA" secondAttribute="top" constant="5" id="O9H-nW-UFs"/>
+                            <constraint firstItem="ZwV-nu-Qy9" firstAttribute="top" secondItem="ZwX-cT-FIQ" secondAttribute="top" id="OG9-nh-Ias"/>
+                            <constraint firstItem="s1b-V9-EN7" firstAttribute="top" secondItem="ZwV-nu-Qy9" secondAttribute="bottom" constant="8" symbolic="YES" id="aWx-Uf-hcz"/>
+                            <constraint firstItem="ZwV-nu-Qy9" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leading" id="exm-Xk-IdO"/>
+                            <constraint firstItem="K9I-jD-KjA" firstAttribute="trailing" secondItem="qTD-hX-yGe" secondAttribute="trailing" constant="20" id="iC1-N1-Z8B"/>
                             <constraint firstAttribute="bottomMargin" secondItem="s1b-V9-EN7" secondAttribute="bottom" constant="14" id="rGH-Fr-IeC"/>
+                            <constraint firstItem="qTD-hX-yGe" firstAttribute="leading" secondItem="K9I-jD-KjA" secondAttribute="leading" constant="20" id="wyh-SN-5oH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K9I-jD-KjA"/>
                     </view>
                     <connections>
-                        <outlet property="dataLabel" destination="cF2-Le-7mQ" id="3EH-BK-JV6"/>
+                        <outlet property="alarmTableView" destination="AXM-Xj-P80" id="ltg-ou-my2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="597" y="-243"/>
+            <point key="canvasLocation" x="594.39999999999998" y="-244.22788605697153"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="crock-pod" width="844" height="138"/>
+    </resources>
 </document>

@@ -30,28 +30,27 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     pageData = dateFormatter.monthSymbols
   }
 
-  func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
+  func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> AlarmListViewController? {
     // Return the data view controller for the given index.
     if (self.pageData.count == 0) || (index >= self.pageData.count) {
         return nil
     }
 
     // Create a new view controller and pass suitable data.
-    let dataViewController = storyboard.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
-    dataViewController.dataObject = self.pageData[index]
-    return dataViewController
+    let alarmListViewController = storyboard.instantiateViewController(withIdentifier: "AlarmListViewController") as! AlarmListViewController
+    return alarmListViewController
   }
 
-  func indexOfViewController(_ viewController: DataViewController) -> Int {
+  func indexOfViewController(_ viewController: AlarmListViewController) -> Int {
     // Return the index of the given data view controller.
     // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-    return pageData.index(of: viewController.dataObject) ?? NSNotFound
+    return 0;
   }
 
   // MARK: - Page View Controller Data Source
 
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-      var index = self.indexOfViewController(viewController as! DataViewController)
+      var index = self.indexOfViewController(viewController as! AlarmListViewController)
       if (index == 0) || (index == NSNotFound) {
           return nil
       }
@@ -61,7 +60,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
   }
 
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-      var index = self.indexOfViewController(viewController as! DataViewController)
+      var index = self.indexOfViewController(viewController as! AlarmListViewController)
       if index == NSNotFound {
           return nil
       }
