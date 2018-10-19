@@ -8,6 +8,12 @@ class AlarmListViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     alarmList.append(Alarm(hour: 12, minute: 55, podcast: Podcast(name: "Harry and the Hendersons and all the other stuff"), repeatDays: [true, true, true, false, true, true, true], enabled: true))
+    alarmList.append(Alarm(hour: 12, minute: 17, podcast: Podcast(name: "The Office"), repeatDays: [true, false, true, false, true, false, true], enabled: false))
+    alarmList.append(Alarm(hour: 3, minute: 9, podcast: Podcast(name: "NPR Hourly News"), repeatDays: [true, false, false, false, false, false, true], enabled: true))
+    alarmList.append(Alarm(hour: 18, minute: 33, podcast: Podcast(name: "Lore"), repeatDays: [false, true, true, true, true, true, false], enabled: false))
+    alarmList.append(Alarm(hour: 7, minute: 42, podcast: Podcast(name: "NBA Jam or something"), repeatDays: [true, true, true, true, true, true, true], enabled: true))
+    alarmList.append(Alarm(hour: 1, minute: 2, podcast: Podcast(name: "Radiolab"), repeatDays: [false, true, false, false, false, false, false], enabled: true))
+    alarmList.append(Alarm(hour: 6, minute: 45, podcast: Podcast(name: "Big Third Down"), repeatDays: [true, false, false, false, false, false, false], enabled: true))
     // Do any additional setup after loading the view, typically from a nib.
   }
 
