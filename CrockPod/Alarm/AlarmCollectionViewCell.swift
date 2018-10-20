@@ -1,6 +1,6 @@
 import UIKit
 
-class AlarmTableViewCell : UITableViewCell {
+class AlarmCollectionViewCell: UICollectionViewCell {
   @IBOutlet weak var alarmTime: UILabel!
   @IBOutlet weak var repeatDays: UILabel!
   @IBOutlet weak var podcastTitle: UILabel!

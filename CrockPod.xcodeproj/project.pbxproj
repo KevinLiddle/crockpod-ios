@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		740CAD952127627100F325C7 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740CAD942127627100F325C7 /* AlarmTableViewCell.swift */; };
+		743C72AC217A8CFC00DEB77C /* AlarmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C72AB217A8CFC00DEB77C /* AlarmCollectionViewCell.swift */; };
 		7484DCF420DD7D60002291C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484DCF320DD7D60002291C4 /* AppDelegate.swift */; };
 		7484DCF620DD7D60002291C4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484DCF520DD7D60002291C4 /* RootViewController.swift */; };
 		7484DCF820DD7D60002291C4 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484DCF720DD7D60002291C4 /* AlarmListViewController.swift */; };
@@ -39,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		740CAD942127627100F325C7 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		743C72AB217A8CFC00DEB77C /* AlarmCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionViewCell.swift; sourceTree = "<group>"; };
 		7484DCF020DD7D60002291C4 /* CrockPod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrockPod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7484DCF320DD7D60002291C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7484DCF520DD7D60002291C4 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -141,9 +141,9 @@
 		7499C8A3211E3B8B00A0CBE3 /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
-				740CAD942127627100F325C7 /* AlarmTableViewCell.swift */,
 				7484DCF720DD7D60002291C4 /* AlarmListViewController.swift */,
 				7499C8A7211E3C0700A0CBE3 /* Alarm.swift */,
+				743C72AB217A8CFC00DEB77C /* AlarmCollectionViewCell.swift */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -294,8 +294,8 @@
 				7484DCFA20DD7D60002291C4 /* ModelController.swift in Sources */,
 				7499C8AB211E3D8100A0CBE3 /* Podcast.swift in Sources */,
 				7499C8A8211E3C0700A0CBE3 /* Alarm.swift in Sources */,
+				743C72AC217A8CFC00DEB77C /* AlarmCollectionViewCell.swift in Sources */,
 				7484DCF820DD7D60002291C4 /* AlarmListViewController.swift in Sources */,
-				740CAD952127627100F325C7 /* AlarmTableViewCell.swift in Sources */,
 				7484DCF420DD7D60002291C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
