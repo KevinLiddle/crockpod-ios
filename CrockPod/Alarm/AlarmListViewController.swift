@@ -15,6 +15,7 @@ class AlarmListViewController: UIViewController {
     alarmList.append(Alarm(hour: 7, minute: 42, podcast: Podcast(name: "NBA Jam or something"), repeatDays: [true, true, true, true, true, true, true], enabled: true))
     alarmList.append(Alarm(hour: 1, minute: 2, podcast: Podcast(name: "Radiolab"), repeatDays: [false, true, false, false, false, false, false], enabled: true))
     alarmList.append(Alarm(hour: 6, minute: 45, podcast: Podcast(name: "Big Third Down"), repeatDays: [true, false, false, false, false, false, false], enabled: true))
+    alarmList.append(Alarm(hour: 8, minute: 00, podcast: Podcast(name: "Simpsons Christmas Boogie"), repeatDays: [false, false, true, false, true, false, false], enabled: true))
   }
 
   override func viewDidLayoutSubviews() {
@@ -72,16 +73,22 @@ extension AlarmListViewController: UICollectionViewDelegate, UICollectionViewDat
   }
 
   private func getRepeatDaysText(_ alarm: Alarm) -> String {
-    if (!alarm.repeatDays.contains(false)) {
+    let repeatDayIndices = (0..<7).filter({ alarm.repeatDays[$0] })
+
+    if (repeatDayIndices.count == 7) {
       return "Every day"
     }
 
-    if (alarm.repeatDays == [false, true, true, true, true, true, false]) {
+    if ((1..<6).elementsEqual(repeatDayIndices)) {
       return "Weekdays"
     }
 
-    if (alarm.repeatDays == [true, false, false, false, false, false, true]) {
+    if (repeatDayIndices == [0, 6]) {
       return "Weekends"
+    }
+
+    if (repeatDayIndices.count == 1) {
+      return Calendar.current.weekdaySymbols[repeatDayIndices[0]] + "s"
     }
 
     return (0..<7)
