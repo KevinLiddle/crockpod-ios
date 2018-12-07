@@ -1,6 +1,6 @@
 import UIKit
 
-class AlarmListViewController: UIViewController {
+class AlarmListViewController: AppController {
 
   @IBOutlet weak var alarmCollectionView: UICollectionView!
   var alarmList = [Alarm]()

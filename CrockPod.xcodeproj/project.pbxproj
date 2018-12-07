@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		743C72AC217A8CFC00DEB77C /* AlarmCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C72AB217A8CFC00DEB77C /* AlarmCollectionViewCell.swift */; };
-		746EEE692183AD7C002C9212 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746EEE682183AD7C002C9212 /* MainController.swift */; };
 		7484DCF420DD7D60002291C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484DCF320DD7D60002291C4 /* AppDelegate.swift */; };
 		7484DCF820DD7D60002291C4 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484DCF720DD7D60002291C4 /* AlarmListViewController.swift */; };
 		7484DCFD20DD7D60002291C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7484DCFB20DD7D60002291C4 /* Main.storyboard */; };
@@ -16,6 +15,7 @@
 		7484DD0220DD7D62002291C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7484DD0020DD7D62002291C4 /* LaunchScreen.storyboard */; };
 		7484DD0D20DD7D62002291C4 /* CrockPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484DD0C20DD7D62002291C4 /* CrockPodTests.swift */; };
 		7484DD1820DD7D62002291C4 /* CrockPodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484DD1720DD7D62002291C4 /* CrockPodUITests.swift */; };
+		748B4CC421BB1B4B00F05E2D /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748B4CC321BB1B4B00F05E2D /* AppController.swift */; };
 		7499C8A8211E3C0700A0CBE3 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7499C8A7211E3C0700A0CBE3 /* Alarm.swift */; };
 		7499C8AB211E3D8100A0CBE3 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7499C8AA211E3D8100A0CBE3 /* Podcast.swift */; };
 /* End PBXBuildFile section */
@@ -39,7 +39,6 @@
 
 /* Begin PBXFileReference section */
 		743C72AB217A8CFC00DEB77C /* AlarmCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCollectionViewCell.swift; sourceTree = "<group>"; };
-		746EEE682183AD7C002C9212 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		7484DCF020DD7D60002291C4 /* CrockPod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrockPod.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7484DCF320DD7D60002291C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7484DCF720DD7D60002291C4 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		7484DD1320DD7D62002291C4 /* CrockPodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrockPodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7484DD1720DD7D62002291C4 /* CrockPodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrockPodUITests.swift; sourceTree = "<group>"; };
 		7484DD1920DD7D62002291C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		748B4CC321BB1B4B00F05E2D /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		7499C8A7211E3C0700A0CBE3 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		7499C8AA211E3D8100A0CBE3 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,7 +112,7 @@
 				7484DCFE20DD7D62002291C4 /* Assets.xcassets */,
 				7484DD0020DD7D62002291C4 /* LaunchScreen.storyboard */,
 				7484DD0320DD7D62002291C4 /* Info.plist */,
-				746EEE682183AD7C002C9212 /* MainController.swift */,
+				748B4CC321BB1B4B00F05E2D /* AppController.swift */,
 			);
 			path = CrockPod;
 			sourceTree = "<group>";
@@ -291,8 +291,8 @@
 				7499C8A8211E3C0700A0CBE3 /* Alarm.swift in Sources */,
 				743C72AC217A8CFC00DEB77C /* AlarmCollectionViewCell.swift in Sources */,
 				7484DCF820DD7D60002291C4 /* AlarmListViewController.swift in Sources */,
-				746EEE692183AD7C002C9212 /* MainController.swift in Sources */,
 				7484DCF420DD7D60002291C4 /* AppDelegate.swift in Sources */,
+				748B4CC421BB1B4B00F05E2D /* AppController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
